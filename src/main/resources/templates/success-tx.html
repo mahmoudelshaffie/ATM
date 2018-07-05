@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf Hello World Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+
+</head>
+<body>
+
+	<div>
+		<h1 align="center">$$$$ Successful Transaction $$$$</h1>
+		<h3 align="center">$$$$ Take Your Money $$$$</h3>
+		<br />
+		<br/>
+		
+		<table border="1" align="center" colspan="1" rowspan="1">
+			<div th:if="${not #maps.isEmpty(cash.notes)}">
+					<td>
+						<table border="2" align="center" colspan="1" rowspan="1" valign="top">
+							<th>Note</th>
+							<th></th>
+							<th>Amount</th>
+							<tr th:each="instance : ${cash.notes}">
+								<td th:text="${instance.key}">keyvalue</td>
+								<td>*</td>
+								<td th:text="${instance.value}">num</td>
+							</tr>
+						</table>
+					</td>
+			</div>
+			<td><p><<>></p><td>
+			<div th:if="${not #maps.isEmpty(cash.coins)}">	
+				<td>
+					<table border="2" align="center" colspan="1" rowspan="1" valign="top">
+						<th>Coin</th>
+						<th></th>
+						<th>Amount</th>
+						<tr th:each="instance : ${cash.coins}">
+							<td th:text="${instance.key}">keyvalue</td>
+							<td>*</td>
+							<td th:text="${instance.value}">num</td>
+						</tr>
+					</table>
+				</td>
+			<div>
+		</table>
+
+		</div>
+</body>
+</html>

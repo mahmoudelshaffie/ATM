@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+
+</head>
+<body>
+		
+		<div>
+			<h1>$$$$ Cash Withdraw $$$$</h1>
+		    <form action="#" th:action="@{/withdraw}" th:object="${withdrawRequest}" method="post">
+		    	<p>Account No: <input name="accNo" size="20" type="text" th:field="*{accountNo}"/>
+				<p>PIN: <input type="password" name="pin" size="8" title="PIN" th:field="*{pin}"></p>
+		        <p>Amount <input name="amount" size="20" type="text" title="Amount" th:field="*{amount}"/> </p>
+		        <p><input type="submit" value="Submit" /></p>
+		    </form>
+		<div>
+
+	</div>
+
+</body>
+</html>
